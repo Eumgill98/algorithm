@@ -35,6 +35,7 @@ input = sys.stdin.readline
 
 
 import heapq
+
 n = int(input())
 
 q = []
