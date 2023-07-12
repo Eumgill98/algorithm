@@ -5,23 +5,18 @@ array = list()
 for _ in range(m):
     array.append(int(input()))
 
-array.sort(reverse=True)
+array.sort()
 
-money = 0
+per = []
+money = []
 
 for i in range(m):
-    temp_c = 0
-    temp_money = 0
-    for j in range(m):
-        if array[j] >= array[i]:
-            temp_money += array[i]
-            temp_c += 1
-        
-        if temp_c == n:
-            break
-    
-    if money <= temp_money:
-        money = temp_money
-        per = array[i]
+    temp = array[i]
+    per.append(temp)
+    if len(array[i::]) >= n:
+        money.append(temp*n)
+    else:
+        money.append(temp*len(array[i::]))
 
-print(per, money)
+
+print(per[money.index(max(money))], max(money))
