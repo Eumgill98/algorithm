@@ -5,7 +5,7 @@ input= sys.stdin.readline
 n,m = map(int, input().split())
 size = min(n, m) 
 
-board = [list(map(int, input().rstrip(3))) for _ in range(n)]
+board = [list(map(int, input().rstrip())) for _ in range(n)]
 
 
 def check(k):
