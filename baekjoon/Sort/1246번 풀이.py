@@ -1,5 +1,3 @@
-import sys
-
 n, m = map(int, input().split())
 array = list()
 for _ in range(m):
