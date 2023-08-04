@@ -13,5 +13,5 @@ for _ in range(m):
     for _ in range(2):
         heapq.heappush(heap, tmp)
 
-print(heap)
+
 print(sum(heap))
