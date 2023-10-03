@@ -6,9 +6,8 @@ n = int(input())
 stack = []
 result = 0
 
-buildings = [int(input()) for _ in range(n)]
-
-for b in buildings:
+for _ in range(n):
+    b = int(input())
     while stack and stack[-1] <= b:
         stack.pop()
     stack.append(b)
@@ -16,3 +15,4 @@ for b in buildings:
     result += len(stack) - 1
 
 print(result)
+
