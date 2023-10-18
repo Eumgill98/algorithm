@@ -1,6 +1,5 @@
 import sys
 input = sys.stdin.readline
-from copy import deepcopy
 
 n = int(input())
 dp = [0]+ [1e9]*(n-1)
@@ -18,16 +17,19 @@ for i in range(n-1):
         dp[i+2] = min(dp[i+2], dp[i]+l)
 
 k = int(input())
+result= dp[-1]
 
-result = dp[-1]
-dp2 = deepcopy(dp)
+for i in range(3, n):
+    t, d1, d2 = dp[i-3]+k, 1e9, 1e9
+    for j in range(i, n-1):
 
-for i in range(0, n-3):
-    if dp[i] + k < dp[i+3]:
-        dp2[i+3] = dp[i]+k
-        for j in range(i+4, n):
-            dp2[j] = min(dp[j], dp2[j-1]+values[j-1][0], dp2[j-2]+values[j-2][1])
+        if i+1 <= n:
+            d1 = min(d1, t + values[j][0])
+        if i+2 <= n:
+            d2 = min(d2, t + values[j][1])
 
-        result = min(result, dp2[-1])
+        t, d1, d2 = d1, d2, 1e9
 
-print(result) 
+    result = min(result, t)
+
+print(result)
