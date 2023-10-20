@@ -1,3 +1,4 @@
+# https://bottlenose-oak-2e3.notion.site/5639-02f6bb58755d43e7a85137af84d4753b?pvs=4
 import sys
 sys.setrecursionlimit(10**6)
 
@@ -25,3 +26,6 @@ def postorder(f, e):
     print(array[f])
 
 postorder(0, len(array)-1)
+
+
+

@@ -22,6 +22,7 @@ class kmp:
 
     def progress(self):
         table = self.kmp_table()
+        print(table)
         result = 0
         i = 0
         for j in range(len(self.verse)):

@@ -36,12 +36,14 @@ def other(i, j):
             nx = i + dx[idx]
             ny = j + dy[idx]
 
-            try :
-                sum_value += board[nx][ny]
-            except:
+            if not (0 <= nx < n and 0 <= ny < m):
                 sum_value = 0
+                break
+
+            sum_value += board[nx][ny]
 
         result = max(result, sum_value)
+
 
 for i in range(n):
     for j in range(m):
