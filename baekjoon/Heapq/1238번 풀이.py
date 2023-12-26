@@ -36,9 +36,9 @@ def dijkstra(start):
 
 
 result = 0
+back = dijkstra(x)
 for i in range(1, v + 1):
     go = dijkstra(i)
-    back = dijkstra(x)
     result = max(result, go[x] + back[i])
 
 print(result)

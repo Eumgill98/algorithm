@@ -64,7 +64,6 @@ def air(opt='up'):
             if x == down and y == 0:
                 break
 
-
         if nx < 0 or nx >= r or ny < 0 or ny >= c:
             dir += 1
             continue
@@ -80,6 +79,7 @@ for _ in range(t):
 result = 0
 for i in range(r):
     for j in range(c):
+        a
         if graph[i][j] > 0:
             result += graph[i][j]
 
